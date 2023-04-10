@@ -1,5 +1,8 @@
 async function getData() {
-    let res = await fetch('https://cfb2-178-207-243-233.ngrok-free.app/api/clients')
+    let res = await fetch('https://cfb2-178-207-243-233.ngrok-free.app/api/clients', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    });
     let data = await res.json();
     return data;
 };
@@ -42,7 +45,8 @@ async function deleteClient(id) {
 //поиск
 async function searchClient(value) {
     let res = await fetch('https://cfb2-178-207-243-233.ngrok-free.app/api/clients?search=' + value, {
-        method: 'GET'
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
     });
     let data = await res.json();
     return data;
