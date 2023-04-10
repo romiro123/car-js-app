@@ -1,11 +1,11 @@
 async function getData() {
-    let res = await fetch('http://localhost:3000/api/clients')
+    let res = await fetch('https://cfb2-178-207-243-233.ngrok-free.app/api/clients')
     let data = await res.json();
     return data;
 };
 //создание нового клиента
 async function createClient(obj) {
-    let res = await fetch('http://localhost:3000/api/clients', {
+    let res = await fetch('https://cfb2-178-207-243-233.ngrok-free.app/api/clients', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -20,7 +20,7 @@ async function createClient(obj) {
 };
 //редактирование клиента
 async function changeClient(obj, id) {
-    let res = await fetch('http://localhost:3000/api/clients/' + id, {
+    let res = await fetch('https://cfb2-178-207-243-233.ngrok-free.app/api/clients/' + id, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -35,13 +35,13 @@ async function changeClient(obj, id) {
 };
 //удаление клиента
 async function deleteClient(id) {
-    await fetch('http://localhost:3000/api/clients/' + id, {
+    await fetch('https://cfb2-178-207-243-233.ngrok-free.app/api/clients/' + id, {
         method: 'DELETE'
     })
 };
 //поиск
 async function searchClient(value) {
-    let res = await fetch('http://localhost:3000/api/clients?search=' + value, {
+    let res = await fetch('https://cfb2-178-207-243-233.ngrok-free.app/api/clients?search=' + value, {
         method: 'GET'
     });
     let data = await res.json();
