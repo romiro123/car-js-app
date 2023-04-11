@@ -1,7 +1,6 @@
 async function getData() {
-    let res = await fetch('https://c118-178-207-243-233.ngrok-free.app/api/clients', {
+    let res = await fetch('http://localhost:3000/api/clients', {
         method: 'GET',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
     });
     let data = await res.json();
@@ -9,7 +8,7 @@ async function getData() {
 };
 //создание нового клиента
 async function createClient(obj) {
-    let res = await fetch('https://c118-178-207-243-233.ngrok-free.app/api/clients', {
+    let res = await fetch('http://localhost:3000/api/clients', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -24,7 +23,7 @@ async function createClient(obj) {
 };
 //редактирование клиента
 async function changeClient(obj, id) {
-    let res = await fetch('https://c118-178-207-243-233.ngrok-free.app/api/clients/' + id, {
+    let res = await fetch('http://localhost:3000/api/clients/' + id, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -39,13 +38,13 @@ async function changeClient(obj, id) {
 };
 //удаление клиента
 async function deleteClient(id) {
-    await fetch('https://c118-178-207-243-233.ngrok-free.app/api/clients/' + id, {
+    await fetch('http://localhost:3000/api/clients/' + id, {
         method: 'DELETE'
     })
 };
 //поиск
 async function searchClient(value) {
-    let res = await fetch('https://c118-178-207-243-233.ngrok-free.app/api/clients?search=' + value, {
+    let res = await fetch('http://localhost:3000/api/clients?search=' + value, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
